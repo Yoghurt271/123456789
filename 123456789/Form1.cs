@@ -21,6 +21,8 @@ namespace _123456789
         public Form1()
         {
             InitializeComponent();
+            comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
 
         }
 
@@ -103,6 +105,72 @@ namespace _123456789
             label2.Text = "Координаты по Y: ";
             label3.Text = "Растояние в метрах:";
             label4.Text = "Растояние в километрах:";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if(comboBox1.SelectedIndex == 0)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(56.140411994247444, 40.39224070242224), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Владимир";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(55.73355224284894, 37.61072673978567), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Москва";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
+            if (comboBox1.SelectedIndex == 2)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(40.72238707770534, -74.00852560687767), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Нью-Йорк";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
+            if (comboBox1.SelectedIndex == 3)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(52.52264022293314, 13.391081573952498), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Берлин";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
+            if (comboBox1.SelectedIndex == 4)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(43.60271061808591, 39.725815261155155), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Сочи";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
+            if (comboBox1.SelectedIndex == 5)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(52.37015943092413, 4.891599624063412), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Амстердам";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
+            if (comboBox1.SelectedIndex == 6)
+            {
+                gMapControl1.Overlays.Add(PositionsForUser);
+                GMarkerGoogle MarkerWithMyPosition = new GMarkerGoogle(new PointLatLng(27.98812353404187, 86.92497220814975), GMarkerGoogleType.blue_pushpin);
+                MarkerWithMyPosition.ToolTip = new GMapRoundedToolTip(MarkerWithMyPosition);
+                MarkerWithMyPosition.ToolTipText = "Эверест";
+                PositionsForUser.Markers.Add(MarkerWithMyPosition);
+            }
         }
     }
 }
